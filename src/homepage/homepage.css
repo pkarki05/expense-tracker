@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h2 {
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense {
+  color: #e44d26;
+}
+
+.income {
+  color: #4caf50;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input_field {
+  display: flex;
+  flex-direction: row;
+  max-width: 400px;
+}
+.row {
+  padding: 10px;
+  margin: 10px;
+}
+.check_box {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.check_box input {
+  width: 50px;
+  height: 20px;
+  margin: 0 10px;
+}
+.check_box label {
+  padding: 0;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  margin-left: 30px;
+}
+.dropdown select {
+  height: 30px;
+  width: 200px;
+}
+.add_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.radio_btn {
+  display: flex;
+  border-radius: 3px;
+  margin-left: 20px;
+  height: 30px;
+  width: 100px;
+  align-items: center;
+}
+label {
+  margin-left: 10px;
+}
+.wrapper {
+  border: solid 1px gray;
+  border-radius: 5px;
+  background: hsl(0, 2%, 13%);
+  color: white;
+  padding-bottom: 20px;
+}
+.trans_type {
+  display: flex;
+  gap: 300px;
+
+  margin: 20px;
+}
+
+span{
+  font-size: 1.5rem;
+}
+.expense_category{
+  background-color: red;
+  color: white;
+  font-size: 1.2rem;
+  font-style: italic;
+  border-radius:3px ;
+}
+.income_category{
+  background-color: green;
+  color: white;
+  font-size: 1.2rem;
+  font-style: italic;
+  border-radius:3px ;
+}
