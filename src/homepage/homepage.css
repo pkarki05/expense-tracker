@@ -120,7 +120,7 @@ label {
 }
 
 span{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .expense_category{
   background-color: red;
@@ -132,7 +132,26 @@ span{
 .income_category{
   background-color: green;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-style: italic;
   border-radius:3px ;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.total span:first-child {
+  margin-right: auto; /* Push the first span to the left */
+}
+
+.total span:last-child {
+  margin-left: auto; /* Push the last span to the right */
+}
+.total span{
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
 }

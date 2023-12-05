@@ -118,12 +118,12 @@ const ExpenseForm = ({ addExpense }) => {
             >
               {selectedRadio === "Expense"
                 ? expenseOptionList.map((expense, index) => (
-                    <option key={index} value={expense} >
+                    <option key={index} value={expense}>
                       {expense}
                     </option>
                   ))
                 : incomeOptionList.map((income, index) => (
-                    <option key={index} value={income} disabled={index === 0}>
+                    <option key={index} value={income}>
                       {income}
                     </option>
                   ))}

@@ -1,0 +1,18 @@
+.pie_chart{
+    max-width: 100vh;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+}
+/* src/components/dashboard.css */
+.pie-chart-container {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+  
