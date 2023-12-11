@@ -77,7 +77,7 @@ const ExpenseForm = ({ addExpense }) => {
             <div className="row">
               <label>Amount:</label>
               <input
-                type="text"
+                type="number"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />

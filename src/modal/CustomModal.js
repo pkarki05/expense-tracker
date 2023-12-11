@@ -3,12 +3,12 @@ import Modal from "react-bootstrap/Modal";
 import SignUpForm from "../SignUpForm";
 
 function CustomModal({
-  children,show, onHide
+  children,show, onHide,title
 }) {
   return (
     <Modal show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Sign Up!</Modal.Title>
+        <Modal.Title>{title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {children}

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import PieChart from "./PieChart";
 // import { Chart } from "react-chartjs-2";
 import { Chart, ArcElement } from "chart.js";
+import { expenseColors, incomeColors } from "../colors"; // Import colors
 
 const Dashboard = ({ expenses, incomes }) => {
   Chart.register(ArcElement);
@@ -51,17 +52,7 @@ const Dashboard = ({ expenses, incomes }) => {
     datasets: [
       {
         data: calculateTotalByCategory(expenses, expenseOptionList),
-        backgroundColor: [
-          "#FF6384",
-          "#FF9F40",
-          "#FFCD56",
-          "#FFD700",
-          "#FF4500",
-          "#FF6347",
-          "#FF8C00",
-          "#FFA07A",
-          "#DAA520",
-        ],
+        backgroundColor: expenseColors,
       },
     ],
   };
@@ -71,31 +62,29 @@ const Dashboard = ({ expenses, incomes }) => {
     datasets: [
       {
         data: calculateTotalByCategory(incomes, incomeOptionList),
-        backgroundColor: [
-          "#36A2EB",
-          "#5F9EA0",
-          "#20B2AA",
-          "#00CED1",
-          "#87CEEB",
-          "#4682B4",
-          "#4169E1",
-          "#6A5ACD",
-          "#8A2BE2",
-        ],
+        backgroundColor: incomeColors,
       },
     ],
   };
+  // ... (Previous code)
+
   const options = {
     tooltips: {
       callbacks: {
         label: function (tooltipItem, data) {
           const label = data.labels[tooltipItem.index];
           const value = data.datasets[0].data[tooltipItem.index];
-          return `${label}: $${value.toFixed(2)}`;
+          const percentage = (
+            (value / data.datasets[0].data.reduce((a, b) => a + b, 0)) *
+            100
+          ).toFixed(2);
+          return `${label}: $${value.toFixed(2)} (${percentage}%)`;
         },
       },
     },
   };
+
+  // ... (Remaining code)
 
   return (
     <div className="pie_chart">

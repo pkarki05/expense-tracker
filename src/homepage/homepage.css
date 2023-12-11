@@ -119,22 +119,25 @@ label {
   margin: 20px;
 }
 
-span{
+span {
   font-size: 1.2rem;
 }
-.expense_category{
-  background-color: red;
+.expense_category {
   color: white;
   font-size: 1.2rem;
   font-style: italic;
-  border-radius:3px ;
+  border-radius: 3px;
 }
-.income_category{
+.span-container {
+  text-align: center;
+}
+
+.income_category {
   background-color: green;
   color: white;
   font-size: 1rem;
   font-style: italic;
-  border-radius:3px ;
+  border-radius: 3px;
 }
 .total {
   display: flex;
@@ -150,8 +153,11 @@ span{
 .total span:last-child {
   margin-left: auto; /* Push the last span to the right */
 }
-.total span{
+.total span {
   font-size: 16px;
   font-weight: 700;
   font-style: normal;
+}
+.log-btn{
+  margin: 1rem
 }

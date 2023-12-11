@@ -1,18 +1,40 @@
 .pie_chart{
-    max-width: 100vh;
     display: flex;
     flex-direction: row;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 1rem;
 }
+/* src/components/dashboard.css */
 /* src/components/dashboard.css */
 .pie-chart-container {
     margin: 20px;
     text-align: center;
   }
   
-  canvas {
-    max-width: 100%;
-    height: auto;
+  .chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .chart-legend > div {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .legend-color {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+  
+  .legend-label {
+    margin-right: 5px;
+  }
+  
+  .legend-value {
+    font-weight: bold;
   }
   

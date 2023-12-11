@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import CustomModal from "./modal/CustomModal";
 
-const SignUpForm = () => {
+const SignUpForm = ({ onClose }) => {
   const [showModal, setShowModal] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [surName, setSurName] = useState("");
@@ -20,24 +20,24 @@ const SignUpForm = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (user) => {
     try {
       setLoading(true);
+      const db = getFirestore();
       // Your form submission logic
       const docRef = await addDoc(collection(db, "users"), {
+        userId: user.uid,
         firstName,
         surName,
         phoneNum,
         email,
-        password,
-        confirmPassword,
         dob,
         gender,
       });
-      toast.success("Form submitted successfully!");
+      toast.success("User Created successfully!");
       // resetForm();
       // setShowModal(false);
-
+      onClose();
       console.log("Document written with ID: ", docRef.id);
     } catch (error) {
       console.error("Error adding document: ", error);
@@ -64,8 +64,9 @@ const SignUpForm = () => {
       );
       const user = userCredential.user;
       console.log("User Signed Up:", user);
+      setShowModal(false);
 
-      await handleFormSubmit();
+      await handleFormSubmit(user);
     } catch (error) {
       setError(error.message);
       console.error("Error signing up:", error);
@@ -74,17 +75,17 @@ const SignUpForm = () => {
     }
   };
 
-  const resetForm = () => {
-    setFirstName("");
-    setSurName("");
-    setPhoneNum("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-    setDob("");
-    setGender("Male");
-    setError(null);
-  };
+  // const resetForm = () => {
+  //   setFirstName("");
+  //   setSurName("");
+  //   setPhoneNum("");
+  //   setEmail("");
+  //   setPassword("");
+  //   setConfirmPassword("");
+  //   setDob("");
+  //   setGender("Male");
+  //   setError(null);
+  // };
 
   return (
     <>
